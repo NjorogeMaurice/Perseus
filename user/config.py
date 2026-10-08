@@ -11,7 +11,7 @@ class LocalConfig:
     DB_PORT = 5432
 
 
-class DockerConfig:
+class :
     DB_NAME = 'shared'
     DB_USER = 'user'
     DB_PASSWORD = 'password'

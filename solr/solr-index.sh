@@ -3,8 +3,8 @@
 SCRIPT_PATH=`echo "$(dirname -- "$(readlink -f "${BASH_SOURCE}")")"`
 echo "${SCRIPT_PATH}" && cd "${SCRIPT_PATH}" && pwd
 
-VOCABULARY_USER="vocabulary"
-VOCABULARY_PASS="password"
+VOCABULARY_USER="admin"
+VOCABULARY_PASS="admin"
 SOLR_HOST="$1"
 SOLR_PORT="8983"
 DB_HOST="$1"

@@ -5,7 +5,7 @@ services:
     container_name:
       web
     ports:
-      - "80:80"
+      - "2345:80"
     restart: always
   shareddb:
     image: perseushub/shareddb:latest
@@ -14,7 +14,7 @@ services:
     volumes:
       - shareddb:/data/postgres
     ports:
-      - "5432:5432"
+      - "5431:5432"
   files-manager:
     image: perseushub/files-manager:latest
     build: ./files-manager
@@ -58,6 +58,8 @@ services:
       frontend
     ports:
       - "4200:4200"
+    volumes:
+    - ./UI:/usr/src/app  # Mounts the ./UI directory to the /app directory in the container (adjust the path as necessary)
   white-rabbit:
     image: perseushub/white-rabbit:latest
     build: ../WhiteRabbit
@@ -82,7 +84,7 @@ services:
     volumes:
       - vocabularydb:/data/postgres
     ports:
-      - "5431:5432"
+      - "5433:5432"
   cdm-builder:
     image: perseushub/cdm-builder:latest
     build: ../ETL-CDMBuilder
@@ -159,7 +161,7 @@ services:
     build: ./swagger-ui
     container_name: swagger
     ports:
-      - 8080:8080
+      - 8088:8080
 volumes:
   shareddb:
   vocabularydb:

@@ -4,7 +4,7 @@
       <app-auth-logo></app-auth-logo>
     </div>
 
-    <ng-container *ngIf="!isAzureAuth">
+    <!-- <ng-container *ngIf="!isAzureAuth">
       <div class="sign-in__form__control">
         <label for="email">
           E-mail
@@ -19,20 +19,29 @@
         <label>Password</label>
         <app-auth-password-input formControlName="password"></app-auth-password-input>
       </div>
-    </ng-container>
+    </ng-container> -->
+
+    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; font-family: Arial, sans-serif; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 600px; margin: 0 auto;">
+      <p style="font-size: 16px; color: #333; line-height: 1.5;">
+        The <strong>OMOP CDM Tool</strong> is a comprehensive platform designed to help users work with healthcare data in the OMOP Common Data Model (CDM) format.
+      </p>
+    </div>
+    
+
+
 
     <app-auth-error-message *ngIf="error" class="sign-in__form__error"
                             [style.top]="errorTop"
                             [message]="error"></app-auth-error-message>
 
     <div class="sign-in__form__submit">
-      <button type="submit" [disabled]="form.invalid || loading" [class.spinner]="loading">Login</button>
+      <button type="submit" [disabled]="loading" [class.spinner]="loading">Login</button>
     </div>
 
-    <div *ngIf="!isAzureAuth" class="sign-in__form__redirect">
-      <a [routerLink]="['/sign-out']">Register</a>
+    <!-- <div *ngIf="!isAzureAuth" class="sign-in__form__redirect">
+      <a [routerLink]="['/sign-out']">Register1234</a>
       <span>|</span>
       <a [routerLink]="['/recover-password']">Forgot Password ?</a>
-    </div>
+    </div> -->
   </form>
 </app-auth-background>

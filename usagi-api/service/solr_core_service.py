@@ -29,7 +29,7 @@ def create_index_if_not_exist(logger):
             db_user = app.config['VOCABULARY_DB_USER']
             db_password = app.config['VOCABULARY_DB_PASSWORD']
             full_import_command = f"solr/{USAGI_CORE_NAME}/dataimport?command=full-import" \
-                                  f"&jdbcurl=jdbc:postgresql://{db_host}:{dp_port}/{dp_name}" \
+                                  f"&jdbcurl=jdbc:postgresql://{db_host}:{dp_port}/{dp_name}?currentSchema=usagi_data" \
                                   f"&jdbcuser={db_user}" \
                                   f"&jdbcpassword={db_password}"
             result = run_solr_command(full_import_command)
